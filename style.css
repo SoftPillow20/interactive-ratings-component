@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: calc(12 / 16 * 100%);
+  overflow: hidden;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: hsl(216, 12%, 8%);
+  color: hsl(0, 100%, 100%);
+}
+
+.ratings-component {
+  width: 45rem;
+  margin: 0 auto;
+}
+
+.ratings,
+.thank-you-component {
+  padding: 3.6rem;
+  background: linear-gradient(
+    to bottom,
+    hsla(213, 20%, 18%),
+    hsl(213, 19%, 18%, 0.4)
+  );
+  border-radius: 2rem;
+}
+
+.thank-you-component {
+  text-align: center;
+}
+
+.state {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+}
+
+.state.active {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  position: relative;
+}
+
+.icon-container {
+  display: inline-block;
+  padding: 1.8rem;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: left;
+  margin-bottom: 3.6rem;
+}
+
+.img-container {
+  margin-bottom: 1.6rem;
+}
+
+.primary-header,
+.secondary-header {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.ratings--description,
+.thank-you--description {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: hsl(217, 12%, 63%);
+  margin-bottom: 2.4rem;
+}
+
+.ratings--result {
+  display: inline-block;
+  padding: 0.6em 1.6em;
+  border-radius: 1.6rem;
+  font-size: 1.2rem;
+  color: hsl(25, 97%, 53%);
+  background-color: hsl(213, 19%, 18%);
+  margin-bottom: 3.2rem;
+}
+
+.img-thank-you,
+.secondary-header,
+.thank-you--description {
+  transform: translateY(-20%);
+  opacity: 0;
+  transition: transform 1.5s, opacity 1.5s;
+}
+
+.ratings--result {
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.active .ratings--result {
+  opacity: 1;
+}
+
+.active .img-thank-you,
+.active .secondary-header,
+.active .thank-you--description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ratings--buttons {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: hsl(217, 12%, 63%);
+  margin-bottom: 2.6rem;
+}
+
+.ratings--button {
+  height: 5.6rem;
+  width: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 100%;
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.activate--button {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(213, 19%, 18%);
+}
+
+.ratings--submit {
+  display: inline-block;
+  width: 100%;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  background-color: hsl(25, 97%, 53%);
+  cursor: pointer;
+
+  transition: all 0.15s;
+}
+
+.ratings--submit:hover {
+  background-color: hsl(25, 92%, 43%);
+}
+
+.ratings--button:hover,
+.ratings--submit:active {
+  background-color: hsl(0, 100%, 100%);
+  color: hsl(213, 19%, 18%);
+}
+
+.hidden {
+  display: none;
+}
+
+/*
+  Delete for scalability
+  // if you want to add more sections without viewing the rating section on your entire viewport, just delete this component
+*/
+.center-component-flex {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***********************************************/
+/* MEDIA QUERIES */
+/***********************************************/
+
+@media (max-width: 47em) {
+  html {
+    font-size: calc(10 / 16 * 100%);
+  }
+}
+
+@media (max-width: 30em) {
+  html {
+    font-size: calc(8 / 16 * 100%);
+  }
+
+  .ratings,
+  .thank-you-component {
+    margin: 0 3.2rem;
+  }
+}
