@@ -6,7 +6,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: calc(12 / 16 * 100%);
+  font-size: calc(10 / 16 * 100%);
   overflow: hidden;
 }
 
@@ -188,12 +188,6 @@ body {
 /* MEDIA QUERIES */
 /***********************************************/
 
-@media (max-width: 47em) {
-  html {
-    font-size: calc(10 / 16 * 100%);
-  }
-}
-
 @media (max-width: 30em) {
   html {
     font-size: calc(8 / 16 * 100%);
@@ -204,3 +198,4 @@ body {
     margin: 0 3.2rem;
   }
 }
+
